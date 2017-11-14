@@ -1,0 +1,13 @@
+[Unit]
+Description=IBM WebSphere Application Server
+#Activate the after db2fmcd if DB2 is also installed on your system.
+#After=db2fmcd.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/opt/IBM/tools/startInfrastructure.sh
+ExecStop=/opt/IBM/tools/stopInfrastructure.sh
+User=wasuser
+[Install]
+WantedBy=default.target
