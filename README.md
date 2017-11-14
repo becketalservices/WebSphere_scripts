@@ -50,3 +50,14 @@ This script loops throuh all nodes on the system and starts / stopps all registe
 4. unit file
 The unit file calls the startInfrastructure.sh on startup and the stopInfrastructure.sh on shutdown.
 
+# Deployment
+To deploy this scripts execute this steps:
+1. download all scripts in the tools folder to /opt/IBM/tools
+2. update the profile path inside all 6 scripts if necessary.
+3. make shure this scripts are owned and executable by your websphere user.
+4. download the websphere.service file from the unit folder into /opt/systemd/system
+5. adjust the websphere.service file (e.g. adjust the name of your webphere user or change the path to the start scripts)
+6. enable the serveice by systemctl enable websphere.service
+7. test the scripts by starting / stoping the websphere service (systemctl start webphere)
+8. reboot your system to test again
+
