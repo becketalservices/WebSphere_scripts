@@ -1,5 +1,5 @@
 #!/bin/bash
-version=201711141055
+version=201711151320
 BASEDIR=$(dirname "$0")
 
 if [ "$EUID" == "0" ]; then
@@ -7,7 +7,7 @@ if [ "$EUID" == "0" ]; then
   exit 1
 fi
 
-echo "starting WebSphre infrastructure"
+echo "stopping WebSphre infrastructure"
 WAS_INSTALL_ROOT=/opt/IBM/WebSphere/AppServer
 error=0
 
