@@ -2,6 +2,8 @@
 Description=IBM WebSphere Application Server
 #Activate the after db2fmcd if DB2 is also installed on your system.
 #After=db2fmcd.service
+Requires=multi-user.target
+After=multi-user.target
 
 [Service]
 Type=oneshot
@@ -9,5 +11,10 @@ RemainAfterExit=true
 ExecStart=/opt/IBM/tools/startInfrastructure.sh
 ExecStop=/opt/IBM/tools/stopInfrastructure.sh
 User=wasuser
+LimitNOFILE=60000
+LimitNPROC=60000
+TimeoutStartSec=10min
+TimeoutStopSec=8min 30sec
+
 [Install]
 WantedBy=multi-user.target
